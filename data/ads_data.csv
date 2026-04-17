@@ -1,0 +1,13 @@
+impressions,clicks,spend,conversions,label
+10000,100,2000,2,creative_issue
+15000,120,3000,3,creative_issue
+20000,800,16000,5,audience_issue
+18000,900,20000,4,audience_issue
+12000,500,2500,2,conversion_issue
+15000,600,3000,3,conversion_issue
+10000,400,2000,40,good
+20000,1000,5000,80,good
+22000,1100,5500,90,good
+8000,50,1500,1,creative_issue
+9000,300,7000,2,audience_issue
+14000,600,3500,5,conversion_issue
