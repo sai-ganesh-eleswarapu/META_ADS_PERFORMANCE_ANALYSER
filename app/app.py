@@ -5,7 +5,7 @@ import joblib
 
 st.set_page_config(page_title="Meta Ads Dashboard", layout="wide")
 
-# Custom UI Styling
+# CUSTOM STYLES
 st.markdown("""
 <style>
 
@@ -38,7 +38,6 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-
 st.title("🔥 Meta Ads Performance Analyzer")
 st.markdown("Analyze and diagnose your ad performance in real-time")
 
@@ -47,7 +46,7 @@ page = st.sidebar.radio("Go to", ["Dashboard", "Analyze Single Ad"])
 
 model = joblib.load("models/ads_model.pkl")
 
-# DASHBOARD PAGE
+# DASHBOARD
 
 if page == "Dashboard":
 
@@ -77,7 +76,7 @@ if page == "Dashboard":
 
             df["insight"] = df["prediction"].apply(get_insight)
 
-            # Calculate KPI's
+            # KPI Calculations
             total_impressions = df['impressions'].sum()
             total_clicks = df['clicks'].sum()
             total_spend = df['spend'].sum()
@@ -129,7 +128,7 @@ if page == "Dashboard":
                 st.metric("Conversion Rate", f"{cvr:.2f}%")
                 st.markdown('</div>', unsafe_allow_html=True)
 
-            # Visualizations
+            # Visualisations and Insights
             colA, colB = st.columns(2)
 
             # DONUT
@@ -190,7 +189,7 @@ if page == "Dashboard":
                 st.plotly_chart(fig2, use_container_width=True)
                 st.markdown('</div>', unsafe_allow_html=True)
 
-            # Data table
+            # Data Table
             st.markdown('<div class="section-title">📋 Ad Performance Data</div>', unsafe_allow_html=True)
             st.dataframe(df, use_container_width=True)
 
@@ -210,7 +209,7 @@ if page == "Dashboard":
         else:
             st.error("CSV must contain: impressions, clicks, spend, conversions")
 
-# For Analysis of Single Ad
+# Single AD Analysis
 
 if page == "Analyze Single Ad":
 
